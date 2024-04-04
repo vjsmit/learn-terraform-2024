@@ -12,5 +12,5 @@ data "aws_security_groups" "test" {
 }
 
 output "sgid" {
-  value = data.aws_security_groups.test.name
+  value = data.aws_security_groups.test.id
 }
