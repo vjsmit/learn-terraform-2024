@@ -61,3 +61,7 @@ output "course_list" {
 output "course_details" {
   value = var.course_details["devops"]
 }
+
+output "cousre_det" {
+  value = var.course_details["aws"]
+}
