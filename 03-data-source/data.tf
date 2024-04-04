@@ -9,6 +9,7 @@ output "cost" {
 
 data "aws_security_groups" "test" {
   name = "allow-all"
+  availability_zone = "us-east-1a"
 }
 
 output "sgid" {
