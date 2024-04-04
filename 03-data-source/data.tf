@@ -6,12 +6,21 @@ output "cost" {
   value = data.aws_ec2_instance_type.example.default_vcpus
 }
 
+#
+#data "aws_security_groups" "test" {
+#  name = "allow-all"
+#}
+#
+#output "sgid" {
+#  value = data.aws_security_groups.test.id
+#}
 
-data "aws_security_groups" "test" {
-  name = "allow-all"
-  availability_zone = "us-east-1a"
+data "aws_ami" "example" {
+  executable_users = ["amazon"]
+  most_recent      = true
+  name_regex       = "Centos-8-DevOps-Practice"
 }
 
-output "sgid" {
-  value = data.aws_security_groups.test.id
+output "ami" {
+  value = data.aws_ami.example.id
 }
