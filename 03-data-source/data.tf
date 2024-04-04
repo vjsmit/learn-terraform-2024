@@ -3,5 +3,5 @@ data "aws_ec2_instance_type" "example" {
 }
 
 output "cost" {
-  value = data.aws_ec2_instance_type.example.id
+  value = data.aws_ec2_instance_type.example.default_vcpus
 }
