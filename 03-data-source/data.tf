@@ -8,9 +8,9 @@ output "cost" {
 
 
 data "aws_security_groups" "test" {
-  id = "allow-all"
+  name = "allow-all"
 }
 
 output "sgid" {
-  value = data.aws_security_groups.test.id
+  value = data.aws_security_groups.test.name
 }
