@@ -1,6 +1,7 @@
 resource "aws_instance" "web" {
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.sample.id]
 
   tags = {
     Name = "HelloWorld"
@@ -24,9 +25,9 @@ resource "aws_security_group" "sample" {
 
 resource "aws_vpc_security_group_ingress_rule" "ingress" {
   security_group_id = aws_security_group.sample.id
-  from_port         = 443
+  from_port         = 22
   ip_protocol       = "tcp"
-  to_port           = 443
+  to_port           = 22
 }
 
 
