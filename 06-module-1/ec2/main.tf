@@ -39,3 +39,7 @@ resource "aws_vpc_security_group_egress_rule" "egress" {
 }
 
 variable "name" {}
+
+output "public_ip" {
+  value = aws_instance.web.public_ip
+}
