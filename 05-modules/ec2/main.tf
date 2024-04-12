@@ -28,6 +28,7 @@ resource "aws_vpc_security_group_ingress_rule" "ingress" {
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
+  cidr_ipv4         = "0.0.0.0/0"
 }
 
 
