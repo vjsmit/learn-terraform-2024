@@ -36,7 +36,7 @@ output "aws_duration" {
 }
 
 output "devops_duration" {
-  value = lookup(lookup(var.classes, "aws",null), "duration", null)
+  value = lookup(lookup(var.classes, "devops",null), "duration", null)
 }
 
 output "devops_topics" {
