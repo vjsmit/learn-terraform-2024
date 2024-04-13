@@ -32,5 +32,5 @@ variable "classes" {
 }
 
 output "classes" {
-  value = var.classes[devops]
+  value = var.classes["devops"]["duration"]
 }
