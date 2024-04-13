@@ -47,14 +47,14 @@ output "aws_topics" {
   value = lookup(lookup(var.classes, "aws", null), "topics", null)
 }
 
-output "fruit_count" {
+output "fruit_count0" {
   value = var.fruits[0]
 }
 
-output "fruit_count" {
+output "fruit_count2" {
   value = var.fruits[2]
 }
 
-output "fruit_count" {
+output "fruit_count4" {
   value = var.fruits[4]
 }
