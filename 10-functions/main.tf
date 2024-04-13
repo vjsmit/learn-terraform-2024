@@ -31,6 +31,10 @@ variable "classes" {
   }
 }
 
+output "aws_duration" {
+  value = lookup(lookup(var.classes, "aws",null), "duration", "yet to decide")
+}
+
 output "devops_topics" {
   value = var.classes["devops"]["topics"]
 }
