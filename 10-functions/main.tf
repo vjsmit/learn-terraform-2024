@@ -31,6 +31,6 @@ variable "classes" {
   }
 }
 
-output "classes" {
+output "devops_topics" {
   value = var.classes["devops"]["topics"]
 }
