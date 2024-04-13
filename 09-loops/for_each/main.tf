@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {
   for_each      = var.instances
   ami           = data.aws_ami.example.id
-  instance_type = each.key["instance_type"]
+  instance_type = each.value["instance_type"]
 
   tags = {
     Name = each.key
