@@ -17,3 +17,20 @@ variable "fruits" {
 output "fruits_count" {
   value = length(var.fruits)
 }
+
+variable "classes" {
+  default = {
+    devops = {
+      name = "devops"
+      duration = 90
+      topics = [ "jenkins", "docker" ]
+    }
+    aws = {
+      name = "aws"
+    }
+  }
+}
+
+output "classes" {
+  value = var.classes[devops][duration]
+}
