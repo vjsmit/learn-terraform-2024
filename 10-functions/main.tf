@@ -55,6 +55,10 @@ output "fruit_count2" {
   value = var.fruits[2]
 }
 
-output "fruit_count4" {
-  value = var.fruits[4]
+#output "fruit_count4" {
+#  value = var.fruits[4]
+#}
+
+output "fruits_count4" {
+  value = element(var.fruits, 4)
 }
