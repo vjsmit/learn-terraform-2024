@@ -40,7 +40,7 @@ output "devops_duration" {
 }
 
 output "devops_topics" {
-  value = var.classes["devops"]["topics"]
+  value = lookup(lookup(var.classes, "devops",null), "topics",null)
 }
 
 #output "aws_topics" {
@@ -69,4 +69,8 @@ output "fruit_count2" {
 
 output "fruits_count4" {
   value = element(var.fruits, 4)
+}
+
+output "fruits_6" {
+  value = element(var.fruits, 6)
 }
