@@ -21,7 +21,6 @@ resource "aws_instance" "web" {
       "ansible-pull -i localhost, -U https://github.com/vjsmit/roboshop-ansible-1 roboshop.yml -e env=dev -e role_name=frontend",
     ]
   }
-
 }
 
 data "aws_ami" "example" {
