@@ -8,38 +8,22 @@
 #  }
 #}
 
-#resource "aws_instance" "web" {
-#  count         = length(var.instances)
-#  ami           = data.aws_ami.example.id
-#  instance_type = "t3.micro"
-#
-#  tags = {
-#    #Name = var.instances[count.index]
-#    Name = element(var.instances, count.index)
-#  }
-#}
-#data "aws_ami" "example" {
-#  owners = ["973714476881"]
-#  most_recent      = true
-#  name_regex       = "Centos-8-DevOps-Practice"
-#}
-#
-#variable "instances" {
-#  default = [ "frontend", "catalogue", "cart" ]
-#}
-
 resource "aws_instance" "web" {
-  count = 3
+  count         = length(var.instances)
   ami           = data.aws_ami.example.id
   instance_type = "t3.micro"
 
   tags = {
-    Name = "HelloWorld"
+    #Name = var.instances[count.index]
+    Name = element(var.instances, count.index)
   }
 }
-
 data "aws_ami" "example" {
+  owners = ["973714476881"]
   most_recent      = true
   name_regex       = "Centos-8-DevOps-Practice"
-  owners           = ["973714476881"]
+}
+
+variable "instances" {
+  default = [ "frontend", "catalogue", "cart" ]
 }
